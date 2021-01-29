@@ -1,3 +1,7 @@
+# 更改 main 中 search_keyword 实现樱花动漫视频搜索与下载
+# 2021-01-29
+# lewamlyn
+
 import os
 import requests
 from bs4 import BeautifulSoup
