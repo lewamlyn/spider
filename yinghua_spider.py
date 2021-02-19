@@ -1,7 +1,4 @@
-# 更改 main 中 search_keyword 实现樱花动漫视频搜索与下载
-# 2021-01-29
-# lewamlyn
-
+# -*- coding:utf-8 -*-
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -11,16 +8,19 @@ from multiprocessing.dummy import Pool as ThreadPool
 def download(url,name,dir_name):
     dn_url = url
     filename = './'+ dir_name + '/' + name + '.mp4'
-    print(name + '开始下载')
-    with closing(requests.get(dn_url, stream=True)) as response:
-        chunk_size = 1024  
-        if response.status_code == 200:
-            with open(filename, "wb") as file:  
-                for data in response.iter_content(chunk_size=chunk_size):  
-                    file.write(data)  
-        else:
-            print('链接异常')
-    print(name + '完成')
+    if os.path.exists(filename):
+        print(name + '已存在')
+    else:
+        print(name + '开始下载')
+        with closing(requests.get(dn_url, stream=True)) as response:
+            chunk_size = 1024   
+            if response.status_code == 200:
+                with open(filename, "wb") as file:  
+                    for data in response.iter_content(chunk_size=chunk_size):  
+                        file.write(data)  
+            else:
+                print('链接异常')
+        print(name + '完成')
 
 def getVedioAddr(de_url):    
     detail_url = de_url
@@ -37,7 +37,7 @@ def getVedioAddr(de_url):
     return link
 
 if __name__ == '__main__':
-    search_keyword = '摇曳露营△ 第二季'
+    search_keyword = '黄金神威 OAD'
     search_url = 'http://www.yhdm.io/search'
     search_url = search_url + '/' + search_keyword
     serach_params = {
