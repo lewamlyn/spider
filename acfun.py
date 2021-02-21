@@ -9,8 +9,8 @@ from tqdm import tqdm
 import time
 
 # 初始化
-search_name = '推的'
-search_uid = '614361'
+search_name = '电锯人'
+search_uid = '169573'
 
 # 创建保存目录
 save_dir = search_name
@@ -85,13 +85,13 @@ for i, url in enumerate(tqdm(chapter_urls)):
         script_info = script.find('script')
         pics = re.findall(r'parts.*?superUbb', str(script_info))
 
-        # 图片格式
-        if re.findall(r'https://imgs.*?jpg',str(pics)):
-            pics = re.findall(r'https://imgs.*?jpg',str(pics))
-        else:
-            pics = re.findall(r'https://imgs.*?png',str(pics))
+        pics = re.findall(r'imgs.*?\\',str(pics))   
+        pic_url =[]
+        for pic in pics:
+            url = 'https://' + pic[:-1]
+            pic_url.append(url)
         
-        for idx, pic in enumerate(pics):
+        for idx, pic in enumerate(pic_url):
             url = pic
             pic_name = '%03d.png' % (idx + 1)
             pic_save_path = os.path.join(chapter_save_dir, pic_name)
