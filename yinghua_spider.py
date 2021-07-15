@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     r.encoding = 'utf-8'
     server = 'http://www.yhdm.io'
-    search_html = BeautifulSoup(r.text, 'lxml')
+    search_html = BeautifulSoup(r.text, 'html.parser')
     search_lists = search_html.find('div', class_='lpic')
     search_lists = search_lists.find('ul')
     search_lists = search_lists.find_all('a')
