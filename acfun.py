@@ -29,7 +29,7 @@ search_headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 # 获取文章总数目
 sess = requests.Session()
 r = sess.get(url=search_url, headers=search_headers)
-html = BeautifulSoup(r.text, 'lxml')
+html = BeautifulSoup(r.text, 'html.parser')
 tags = html.find('ul',class_='tags')
 counts = tags.find_all('span')
 temp = 0
