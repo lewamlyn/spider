@@ -14,4 +14,11 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: 'Check Update'
+        run: |
+          vartext=$(cat ./update)
+          echo "::set-env name=SHOULD_UPDATE::${vartext}"
+        shell: bash
+      - name: 'Send Content'
+        if: ${{env.SHOULD_UPDATE=='true'}}
+        run: echo "🍏 This job's status is ${{ job.status }}."
