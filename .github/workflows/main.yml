@@ -14,13 +14,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: 'Get Date'
-        run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
-      - name: 'Check Update'
-        run: |
-          vartext=$(cat ./update)
-          echo "::set-env name=SHOULD_UPDATE::${vartext}"
-        shell: bash
       - name: 'Send Content'
-        if: ${{env.SHOULD_UPDATE=='true'}}
         run: echo "🍏 This job's status is ${{ job.status }}."
