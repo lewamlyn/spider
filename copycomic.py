@@ -13,12 +13,12 @@ def get_new(name):
 
 def get_back(file_name):
     old = []
-    if os.path.exists(file_name):
+    try:
         with open(file_name, mode='r') as f:
             for line in f.readlines():
                 line = line.strip('\n')
                 old.append(line)
-    else:
+    except:
         with open(file_name, mode='w') as f:
             print('无本地存储信息')
     return old
