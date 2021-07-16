@@ -10,7 +10,7 @@ def get_new(name):
     html = req.text
     bf = BeautifulSoup(html, 'html.parser')
     texts = bf.find_all('title')
-    return str(texts).split('-')[1] + '-' + str(texts).split('-')[2]
+    return str(texts).split('-')[1][:-2] + '-' + str(texts).split('-')[2]
 
 def get_back(file_name):
     old = []
