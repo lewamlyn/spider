@@ -1,5 +1,8 @@
 name: GitHub Actions Demo
-on: [push]
+on: 
+  push:
+  schedule:
+    - cron: '30 2,9,15 * * *' # Mon - Fri : 10:30, 17:30, 23:30
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -22,8 +25,7 @@ jobs:
           git config --global user.email 604504800@qq.com
           git config --global user.name lewamlyn
           git add .
-          git commit -m "update" -a
-    
+          git commit -m "update" -a    
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
