@@ -29,4 +29,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Send Content'
-        run: echo "next time complete"
+        run: |
+          python ./send.py ${{ secrets.send_key }}
