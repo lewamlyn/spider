@@ -26,7 +26,7 @@ def get_back(file_name):
 
 if __name__ == '__main__':
 
-    spider_lists = ['modujingbingdenuli','beicandeqilingzhe','zhongmodenvwushen', 'nvyouchengshuang', 'zaiyishijiemigongkaihougong','satanophany','hydxjxrwgb','yaosanjiao']
+    spider_lists = ['modujingbingdenuli','beicandeqilingzhe','zhongmodenvwushen', 'nvyouchengshuang', 'zaiyishijiemigongkaihougong','satanophany','hydxjxrwgb','yaosanjiao','grandblue']
     old_lists = get_back('./back.txt')
     update_lists = []
     print(old_lists)
