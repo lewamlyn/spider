@@ -44,3 +44,11 @@ if __name__ == '__main__':
             fu.write(url + '\n')           
     f.close()
     fu.close()
+
+    with open("./runtimes.txt", "r", encoding="utf-8") as f:
+        x = f.read()
+    x = str(int(x) + 1)
+    with open("./runtimes.txt", "w", encoding="utf-8") as f:
+        f.write(x)
+    f.close()
+    print("successful")
