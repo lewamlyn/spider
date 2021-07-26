@@ -28,14 +28,16 @@ if __name__ == '__main__':
 
     spider_lists = ['modujingbingdenuli','beicandeqilingzhe','zhongmodenvwushen', 'nvyouchengshuang', 'zaiyishijiemigongkaihougong','satanophany','hydxjxrwgb','yaosanjiao','grandblue']
     old_lists = get_back('./back.txt')
-    update_lists = []
     print(old_lists)
 
     # 获取信息，更新信息
     f = open('./back.txt','w+')
     fu = open('./update.txt','w+')
     for i in range(len(spider_lists)):
-        new = get_new(spider_lists[i])
+        try:
+            new = get_new(spider_lists[i])
+        except:
+            new = old_lists[i]
         url = parse.quote(str(new))
         f.write(url+ '\n')
         if i >= len(old_lists):
