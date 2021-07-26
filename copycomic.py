@@ -38,6 +38,7 @@ if __name__ == '__main__':
             new = get_new(spider_lists[i])
         except:
             new = old_lists[i]
+            print('get new unsuccessfully')
         url = parse.quote(str(new))
         f.write(url+ '\n')
         if i >= len(old_lists):
@@ -53,4 +54,4 @@ if __name__ == '__main__':
     with open("./runtimes.txt", "w", encoding="utf-8") as f:
         f.write(x)
     f.close()
-    print("successful")
+    print("successfully")
