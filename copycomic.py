@@ -37,7 +37,7 @@ if __name__ == '__main__':
         try:
             new = get_new(spider_lists[i])
         except:
-            new = old_lists[i]
+            new = parse.unquote(old_lists[i])
             print(spider_lists[i])
             print('get new unsuccessfully')
         url = parse.quote(str(new))
