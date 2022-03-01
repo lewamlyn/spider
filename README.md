@@ -1,5 +1,4 @@
 # spider
-自学 python spider 
 ## 樱花动漫视频下载
 * yinghua_spider.py 下载搜索的视频
 * 修改 main 函数中 search_keyword
