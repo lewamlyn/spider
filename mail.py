@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # 收件方邮箱
     # jin mei ju hao jiao
-    names = ['604504800@qq.com','3180106149@zju.edu.cn','22231084@zju.edu.cn','3180106149@zju.edu.cn','22231084@zju.edu.cn']
+    names = ['12207137@zju.edu.cn','852654283@qq.com','982135472@qq.com','854694132@qq.com','lxj123@nwafu.edu.cn']
     if time.localtime().tm_wday > 4:
         change = 0 
         # 获取轮班信息
