@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # 邮件标题
     subject = 'SCDA小助手上班啦！(●ˇ∀ˇ●)'
     # 邮件内容
-    if time.localtime().tm_hour < 12:
+    if time.localtime().tm_hour < 6:
         mail_msg = """
                     <p>每日日报：每日新闻 + 宣讲会</p>
                     <p><a href="https://www.career.zju.edu.cn/">浙大就业指导与服务中心</a></p>
