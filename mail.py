@@ -1,5 +1,6 @@
 import smtplib
 import time
+import sys
 from email.mime.text import MIMEText
 from email.header import Header
 
@@ -40,6 +41,7 @@ if __name__ == '__main__':
     # 邮件标题
     subject = 'SCDA小助手上班啦！(●ˇ∀ˇ●)'
     # 邮件内容
+    print(time.localtime().tm_hour)
     if time.localtime().tm_hour < 6:
         mail_msg = """
                     <p>每日日报：每日新闻 + 宣讲会</p>
