@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on: 
   push:
   schedule:
-    - cron: '30 2,9,15 * * *' # Mon - Fri : 10:30, 17:30, 23:30
+    - cron: '30 2,11 * * *' # 10:30, 19:30
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -20,6 +20,9 @@ jobs:
       - name: Run spider
         run: |
           python ./copycomic.py
+      - name: 'Send Email for SCDA'
+        run: |
+          python ./mail.py ${{ secrets.mail_key }}
       - name: commit
         run: |
           git config --global user.email 604504800@qq.com
