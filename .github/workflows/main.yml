@@ -20,9 +20,9 @@ jobs:
       - name: Run spider
         run: |
           python ./copycomic.py
-      - name: 'Send Email for SCDA'
-        run: |
-          python ./mail.py ${{ secrets.mail_key }}
+      # - name: 'Send Email for SCDA'
+      #   run: |
+      #     python ./mail.py ${{ secrets.mail_key }}
       - name: commit
         run: |
           git config --global user.email 604504800@qq.com
